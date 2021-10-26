@@ -2,11 +2,17 @@
 {
   public abstract class Funcionario
   {
-    public static int TotalDeFuncionarios { get; set; }
+    public static int TotalDeFuncionarios { get; private set; }
     public string Nome { get; set; }
-    public string Cpf { get; set; }
+    public string Cpf { get; private set; }
     public decimal Salario { get; protected set; }
 
+    public Funcionario(string cpf)
+    {
+      TotalDeFuncionarios++;
+      Cpf = cpf;
+    }
+    
     public Funcionario(string cpf, decimal salario)
     {
       Cpf = cpf;
@@ -14,14 +20,8 @@
       TotalDeFuncionarios++;
     }
 
-    public virtual void AumentarSalario()
-    {
-      Salario *= (decimal) 1.1;
-    }
+    public abstract void AumentarSalario();
 
-    public virtual decimal GetBonificacao()
-    {
-      return Salario * (decimal) 0.10;
-    }
+    public abstract decimal GetBonificacao();
   }
 }

@@ -1,6 +1,8 @@
-﻿namespace NetBank.Funcionarios
+﻿using NetBank.Sistemas;
+
+namespace NetBank.Funcionarios
 {
-  public class GerenteDeConta : Funcionario
+  public class GerenteDeConta : FuncionarioAutenticavel
   {
     public GerenteDeConta(string cpf) : base(cpf, 4000)
     {

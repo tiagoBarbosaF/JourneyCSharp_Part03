@@ -1,6 +1,8 @@
-﻿namespace NetBank.Funcionarios
+﻿using NetBank.Sistemas;
+
+namespace NetBank.Funcionarios
 {
-  public class Diretor : Funcionario
+  public class Diretor : FuncionarioAutenticavel
   {
     public Diretor(string cpf) : base(cpf, 5000)
     {
